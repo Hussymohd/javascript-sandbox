@@ -66,7 +66,9 @@ myBalance += 3000;
 myBalance -= 1200;
 console.log("My balance is ", myBalance);
 // peter pan with accountNumber: has a balance of myBalance
-const accountStatement = `${fullName} with account number ${accountNumber} has a balance of ${myBalance.toFixed(2)}`
+const accountStatement = `${fullName} with account number ${accountNumber} has
+// means give me that no in 2 decimal point (toFixed(2))
+a balance of ${myBalance.toFixed(2)}`
 console.log(accountStatement);
 
 

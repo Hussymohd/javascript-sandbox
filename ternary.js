@@ -9,7 +9,11 @@ if (myAtmPin === enteredPin){
     console.log("Incorrect Pin");
     
 }
-// ternary operator-works exactly like an if else function 
+// ternary operator-works exactly like an if else function (dey only cater for 2 choices) e.g
+let apcVote = 78;
+let pdpVote = 89;
+
+apcVote > pdpVote ? console.log("Apc wins") : console.log("PDP wins");
 
 
 myAtmPin === enteredPin

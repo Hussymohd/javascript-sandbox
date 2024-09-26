@@ -7,6 +7,13 @@ for (let i = 0; i < 10; i++) {
     //  console.log("loop" + i); 
 }
 
+// continue(means like wen u get to i === 2 skip and continue going) and break(means stop-even bfr d condition terminates, u stop)
+for (let i = 0; i < 3; i++) {
+    if (i === 2){
+      break;
+    }
+  }
+
 // write a loop dat return the sum of natural numbers between 0 and 3 0 + 1+ 2 + 3(could be anything)
 let sum = 0;
 
@@ -15,7 +22,7 @@ for (let i = 0; i <= 3; i++) {
 }
 console.log(sum);
 
-// WHILE LOOP - also has the same principle as for loop
+// WHILE LOOP - also has the same principle as "for" loop
 // while
 // initializer
 // while(condition){
@@ -32,6 +39,15 @@ let num = 1;
 while (num <= 10) {
   console.log("In the loop" + num);
   num++;
+}
+
+let x = 1;
+while (x <= 5) {
+  
+  if(x === 2){
+    break;
+  }
+  x++;
 }
 
 // DO WHILE LOOP- perform the action once atleast whether condition is true or false

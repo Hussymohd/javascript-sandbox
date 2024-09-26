@@ -23,7 +23,7 @@ console.log(fullName.toLowerCase());
 // all d instances
 console.log(fullName.replace("o", "*"));
 console.log(fullName.replaceAll("o", "*"));
-// includes 
+// includes- does something include 
 console.log(fullName.includes("y"));
 // startsWith, endsWith
 console.log(fullName.startsWith("Jo"));
@@ -53,7 +53,7 @@ console.log(userName.trimStart());
 console.log(userName.trimEnd());
 //methods used for extracting portions of a string 
 // slice, substring, substr (start, num of characters we want)
-// slice( start, end(non inclusive, jus where we stop,its not included))
+// slice( start, end(non inclusive, jus - where we stop,its not included))
 const surname = "Sandler";
 console.log(surname.slice(0,4));
 // substring(used to extract portion a string (if the end is missing,it will pick up to the original staring same for slice))

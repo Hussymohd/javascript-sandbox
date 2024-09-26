@@ -41,3 +41,5 @@ console.log(Boolean(""))
 console.log(Boolean(" "));
 
 // null and undefined are falsy values
+
+// common errors syntax errors
