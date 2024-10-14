@@ -26,7 +26,6 @@ students.push("Eniola");
 students.pop();
 students.pop();
 console.log(students.pop());
-
 students.unshift("Adedayo");
 students.unshift("Timi");
 students.shift();
@@ -188,7 +187,9 @@ console.log(arr.indexOf("ade"));
 console.log(arr.lastIndexOf("ade"));
 
 // Delete - it is used to delete an element from an array( we dont use it because it leaves hole in ur array-it wont close up)
-console.log(arr);
+console.log(arr);[
+
+]
 delete arr[1];
 console.log(arr);
 

@@ -13,7 +13,7 @@ if (myAtmPin === enteredPin){
 let apcVote = 78;
 let pdpVote = 89;
 
-apcVote > pdpVote ? console.log("Apc wins") : console.log("PDP wins");
+apcVote > pdpVote ? console.log("Apc wins") : console.log("Pdp wins")
 
 
 myAtmPin === enteredPin

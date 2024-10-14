@@ -52,9 +52,9 @@ while (x <= 5) {
 
 // DO WHILE LOOP- perform the action once atleast whether condition is true or false
 
-let x = 5;
-do {
- console.log('I am in the loop');
-    x++;
-} while (x <= 2);
+// let x = 5;
+// do {
+//  console.log('I am in the loop');
+//     x++;
+// } while (x <= 2);
   

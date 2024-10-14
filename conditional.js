@@ -126,4 +126,4 @@ switch (grade) {
   default:
     console.log("Invalid grade");
 }
-    
+     

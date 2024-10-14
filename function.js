@@ -68,7 +68,7 @@ const productofTwoNum = function (num1, num2) {
 const result = productofTwoNum(9, 2);
 console.log(result);
 
-// write a function that cibverts km to meter
+// write a function that converts km to meter
 const KmToMeters = function (value) {
     const meter = value * 1000;
     return `${value}km is equal to ${meter}m`
@@ -87,7 +87,7 @@ const calcAverage = function(n1, n2, n3) {
 }
 console.log(calcAverage(10, 5, 17));
 
-// write a function that calculates the age f userName, your ofunction should take in year of birth as a parameter
+// write a function that calculates the age f userName, your function should take in year of birth as a parameter
 // function calculateAge(yearOfBirth) {
 //   const currentYear = (2024)
 //   const age = currentYear - yearOfBirth;

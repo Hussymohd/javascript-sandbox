@@ -64,13 +64,13 @@ console.log(surname.substr(0,5));
 const author = "Ngozi Adichie";
 const bookTitle = "Americanah"
 const yearPublished = "2016";
-const description = "The book " + bookTitle + " written by " + author + " was published in the year " + yearPublished;
+const description = "The book " + bookTitle + " written by " + author + " was published in the year " + yearPublished; 
 
 console.log(description);
 // template literals - allows us to format variables into strings
 // backticks 'the Book ${bookTitle}'
 
-const description2 = "The book " + bookTitle +" written by " + author + " was published in the year " + yearPublished;
+const description2 = `The Book ${bookTitle} written by ${author} was published in the year ${yearPublished}`;
 console.log(description2);
 
 const name1 = "Ade";
@@ -78,7 +78,7 @@ const name2 = 'Wale';
 // Ade is a boy
 const sentence = "${name1} is a boy";
 // His name is wale
-const sentence2 = 'His name is wale';
+const sentence2 = `His name is ${name2}`;
 
 // 'Tinubu said and i quote 'let the poor breathe"
 const quote = 'Tinubu said and i quote "let the poor breathe"';

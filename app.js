@@ -1,91 +1,115 @@
-// write a function that takes in a string and converts the first lettter of everyword to uppercase
+// DOM - Document object model
+//How to select element on the page:
+// 1. get element by the ID
+// const text = document.getElementById("text");
+// console.log(text);
 
-const firstLetter = (str) => {
-  const result = str.split(" ").map((word) => {
-    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-  });
-  return result.join(" ");
-};
-console.log(firstLetter("testing is fun and stressful"));
+// //2. get element by classname
+// const message = document.getElementsByClassName("message");
+// console.log(message);
 
-// write a function that checks if the parameter is a number or not - returns true or false
+// //querySelector, querySelectorAll - use css selectors . #, div 
+// const  paragraph = document.querySelector("#text");
+// console.log(paragraph);
 
-const checkNumber = (arg) => typeof arg === "number";
+// const paragraphs = document.querySelectorAll(".message");
+// console.log(paragraphs);
+// // nodelist - array methods can be performed
 
-console.log(checkNumber("feedo"));
+// const heading6 = document.querySelector("div h6");
 
-const currencyData = [
-  { from: "GBP", to: "NGN", rate: 2200 },
-  { from: "USD", to: "NGN", rate: 1700 },
-  { from: "EUR", to: "NGN", rate: 1900 },
-  { from: "YEN", to: "NGN", rate: 400 },
-];
+// // Ways we can interact with content on the webpage apart from selecting them
+// //textContent, innerText, innerHtml
 
-//iterate over the currency data and log a message the exchange rate for usd to ngn is 1700
+// const heading = document.querySelector("h1");
+// // console.log(heading.textContent);
+// // heading.textContent += "JS IS FUN";
 
- currencyData.map((currencyRate) => {
-    console.log(
-      `The Exchange Rate for $(currencyRate.from) to ${currencyRate.to}  ${currencyRate.rate} `
-    );
- });
+// console.log(heading.innerText);
+// heading.innerText += "JS IS GOOD";
 
-//  write a function that returns the exchange rate for that currency pair or an appropriate message if the pair is not found
+// const div = document.querySelector("div");
+// console.log(div.innerHTML);
+// div.innerHTML += "<p> okay </p>";
 
-const findCurrencyPair = (baseCurrency, toCurrency) => {
-  const pair = currencyData.find(
-    (currency) => currency.from === baseCurrency && currency.to === toCurrency
-  );
-  if (pair) {
-    console.log(`The Exchange rate ${pair.from} to ${pair.to} is ${pair.rate}`);
+// const name = "John";
+// div.innerHTML = `<h1>Welcome ${name} </h1>`;
+
+// // change attributes
+// const beginPara = document.querySelector(".begin");
+// console.log(beginPara);
+// beginPara.className =  "okay";
+// beginPara.id = "good";
+// beginPara.style.color = "red"; 
+// beginPara.style.backgroundColor = "green";
+
+// //interact with css classnames
+// const h1  = document.querySelector("h1");
+// h1.className ="success";
+
+// //classList - u can either add or remove, conatins - returns true or false
+// const msg = document.querySelector("h2.message");
+// // console.log(msg.classList);
+// msg.classList.add  ("error");
+// msg.classList.remove ("example");
+// console.log(msg.classList.contains("good"));
+// console.log(msg);
+
+// // create elements
+// const section = document.createElement("section");
+// section.innerHTML = "<h1>Creaed from JS</h1>";
+
+// // append - adding it somewhere
+// const body = document.querySelector("body");
+// body.appendChild(section);
+
+// //remove element - removeChild
+// //body.removeChild(section);
+
+// //Replace child
+// const link = document.createElement("a");
+// link.innerText = "Visit Google";
+// //link.href = "https://google.com";
+// link.setAttribute("href", "https://google.com");
+
+// body.replaceChild(link, section);
+
+// //responding to user interations
+// //event dat is happening, could be a : click event(click), event handler
+// //addEventListener -  we are listening for dat event for dat particular button
+
+// const btn = document.querySelector("button");
+// btn.addEventListener("click", () => {
+//   console.log("btn clicked");
+//   body.style.backgroundColor = "aqua"
+// });
+
+//form handling
+
+const form = document.querySelector("form");
+// submit event
+form.addEventListener("submit", (event) => {
+  // default of forms when submitted is to refresh the page
+  event.preventDefault();
+  // select those inputfield
+  const username = document.querySelector(".username");
+  const password = document.querySelector(".password");
+
+  const usernameValue = username.value.trim();
+  const passwordValue = password.value;
+  const small = document.querySelector("small");
+  // console.log(usernameValue, passwordValue);
+
+  // validate()
+  if (!usernameValue || !passwordValue) {
+    // display error message
+    small.textContent = "please fill all fields";
+  } else if (username.length < 5) {
+    small.textContent = "minimum user length is 5";
+  } else if (passwordValue.toLowerCase().includes("password")) {
+    small.innerText = "password must not include password";
   } else {
-    console.log("The currency pair cannot be found");
+    // submit form
+    small.textContent = "form submitted";
   }
-};
-// search through the currency data to find a match.
-findCurrencyPair("USD", "NGN");
-
-// write a func that returns the exchange rate for that currency pair 
-//or an appropriate message if the pair is not found
-// const findCurrencyPair = (baseCurrency, toCurrency) => {
-//   //search through the currencyData to find a match
-//   const pair = currencyData.find((currency) => {
-//     return currency.from === baseCurrency && currency.to === toCurrency;
-//   });
-
-//   if (pair) {
-//     console.log(
-//       The Exchange Rate for ${pair.from} to ${pair.to} is ${pair.rate}
-//     );
-//   } else {
-//     console.log("The currency pair cannot be found");
-//   }
-// };
-
-// findCurrencyPair("YEN", "NGN");
-
-// A CONVERSION FUNCTION
-// 2USD 
-const convertCurrency = (baseCurrency, toCurrency, amount) => {
-  const pair = currencyData.find((currency) => {
-    return currency.from === baseCurrency && currency.to === toCurrency;
 });
-
-if (pair){
-    // we will do conversion
-   console.log(`${amount} ${pair.from} is equivalent to ${amount * pair.rate} ${pair.to} `);
-   
-} else {
-    console.log("Currency pair not found"); 
-}
-};
-
-convertCurrency("USD", "NGN", 500);
-
-// Write a function to add to the currency data list
-
-const addNewCurrency = (from, to, rate) =>{
-    currencyData.push({from, to, rate});
-    console.log(currencyData);
-};
-addNewCurrency("AUS", "NGN", 1040);
-
